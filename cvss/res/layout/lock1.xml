@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent" 
+  android:gravity="center"
+  android:padding="30dip"
+  android:background="#cecece" 
+>
+<TextView android:textColor="#6a3ab2" android:text="Locks" android:id="@+id/txtUserName" android:textSize="23sp"  android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+<Button style="@style/button" android:text="USERS" android:id="@+id/users" android:layout_width="fill_parent" android:layout_height="wrap_content"></Button>
+<Button style="@style/button" android:id="@+id/time" android:layout_height="wrap_content" android:text="Set Time Constraint" android:layout_width="fill_parent"></Button>
+<Button style="@style/button" android:id="@+id/back" android:layout_height="wrap_content" android:text="back" android:layout_width="fill_parent"></Button>
+
+</LinearLayout>

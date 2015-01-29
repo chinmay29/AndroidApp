@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent" 
+  android:gravity="center"
+  android:padding="30dip"
+  android:background="#cecece" 
+>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:textColor="#6a3ab2"
+        android:textSize="15sp"
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:text=" CURRENT MOBILE NUMBER :"
+         />
+    <EditText
+        android:id="@+id/oldmob"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:password="true" >
+
+       
+    </EditText>
+        <TextView
+        android:id="@+id/textView4"
+        android:textColor="#6a3ab2"
+        android:textSize="15sp"
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:text=" NEW MOBILE NUMBER :"
+         />
+<EditText
+        android:id="@+id/newmob"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:password="true" >
+
+       
+    </EditText>
+         <Button
+        style="@style/button"
+        android:id="@+id/change"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+               android:text="  CHANGE " />
+
+</LinearLayout>
+
+

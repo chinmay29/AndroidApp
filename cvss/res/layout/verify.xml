@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent" 
+  android:gravity="center"
+  android:padding="30dip"
+  android:background="#cecece" 
+>
+
+    
+
+       
+        <TextView
+        android:id="@+id/textView4"
+        android:textColor="#6a3ab2"
+        android:textSize="15sp"
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:text=" Verification code :"
+         />
+<EditText
+        android:id="@+id/code"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+         >
+
+       
+    </EditText>
+         <Button
+        style="@style/button"
+        android:id="@+id/submit2"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+               android:text="  submit " />
+
+</LinearLayout>
+
+

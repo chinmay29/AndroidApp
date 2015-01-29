@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent" 
+  android:gravity="center"
+  android:padding="30dip"
+  android:background="#cecece" 
+>
+
+<Button
+        style="@style/button"
+        android:id="@+id/change"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+               android:text="  THIS IS MY NEW MOBILE DEVICE " />
+
+</LinearLayout>
+    

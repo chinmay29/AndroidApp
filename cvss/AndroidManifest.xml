@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.finalyear.cvss"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="10"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+	<uses-permission android:name="android.permission.NFC" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/lock1"
+        android:label="@string/app_name"
+      >
+        <activity
+            android:name="com.finalyear.cvss.Login"
+            android:label="@string/app_name" >
+            
+        </activity>
+        
+        <activity 
+            android:name="com.finalyear.cvss.TimeConstraint">
+                    </activity>
+                    <activity 
+            android:name="com.finalyear.cvss.Open">
+                    </activity>
+                     <activity 
+            android:name="com.finalyear.cvss.Signin">
+                    </activity>
+        <activity 
+            android:name="com.finalyear.cvss.Validate">
+                    </activity>
+                  
+        <activity 
+            android:name="com.finalyear.cvss.verifycode">
+                    </activity>
+                    
+           <activity 
+            android:name="com.finalyear.cvss.Admin">
+            
+        </activity>
+        <activity 
+            android:name="com.finalyear.cvss.Details">
+            
+        </activity>
+         <activity 
+            android:name="com.finalyear.cvss.Lock1">
+            
+        </activity>
+         <activity 
+            android:name="com.finalyear.cvss.NdefMessageParser">
+            
+        </activity>
+         <activity 
+            android:name="com.finalyear.cvss.ParseNdefRecord">
+            
+        </activity>
+         <activity 
+            android:name="com.finalyear.cvss.Settings">
+            
+        </activity>
+         <activity 
+            android:name="com.finalyear.cvss.user1">
+            
+        </activity>
+        <activity 
+            android:name="com.finalyear.cvss.First">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                 <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            
+        </activity>
+        <activity 
+            android:name="com.finalyear.cvss.Signup">
+                    </activity>
+        <activity 
+            android:name="com.finalyear.cvss.SplashScreen">
+       
+        </activity>
+        <activity 
+            android:name="com.finalyear.cvss.CDevice">
+                    </activity>
+        <activity 
+            android:name="com.finalyear.cvss.CEmail">
+                    </activity>
+        <activity 
+            android:name="com.finalyear.cvss.CMob">
+                    </activity>
+        <activity 
+            android:name="com.finalyear.cvss.CPwd">
+                    </activity>
+        <activity 
+            android:name="com.finalyear.cvss.UserAcc">
+                    </activity>
+         <activity 
+            android:name="com.finalyear.cvss.ViewUser">
+            
+        </activity>
+    <activity 
+            android:name="com.finalyear.cvss.ApproveUser">
+                    </activity>
+        <activity 
+            android:name="com.finalyear.cvss.RemoveUser">
+                    </activity>
+        <activity 
+            android:name="com.finalyear.cvss.AddLock">
+                    </activity>
+        <activity 
+            android:name="com.finalyear.cvss.forgetpwd">
+                    </activity>
+                    <activity 
+            android:name="com.finalyear.cvss.Forget">
+                    </activity>
+                     <activity 
+            android:name="com.finalyear.cvss.Add">
+                    </activity>
+                     <activity 
+            android:name="com.finalyear.cvss.Write">
+                    </activity>
+                    <activity 
+            android:name="com.finalyear.cvss.Door">
+                    </activity>
+                   
+    </application>
+
+</manifest>

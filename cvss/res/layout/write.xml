@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#cecece"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="30dip" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ready to store the lock ID inside the tag "
+        android:textColor="#372c24" >
+    </TextView>
+
+    <ImageView
+        android:layout_width="181dp"
+        android:layout_height="248dp"
+        android:layout_marginLeft="2dip"
+        android:src="@drawable/nfc" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="178dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.79"
+        android:text="Storing will begin when you tap an NFC compatible item with the back of your device and write the content below"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#372c24" />
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp" >
+
+        <EditText
+            android:id="@+id/edit_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:hint="lock id" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="TextView" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Write!!" />
+    </LinearLayout>
+
+</LinearLayout>

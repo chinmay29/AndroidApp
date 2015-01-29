@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent" 
+  android:gravity="center"
+  android:padding="30dip"
+  android:background="#ffffff" 
+>
+<TextView
+        android:id="@+id/textView3"
+        android:textColor="#6a3ab2"
+        android:textSize="15sp"
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:text=" Multi-User Lock"
+         />
+<TextView
+        android:id="@+id/textView3"
+        android:textColor="#6a3ab2"
+        android:textSize="15sp"
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:text=" Lock :"
+         /> 
+<EditText
+        android:id="@+id/lock"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+    android:inputType="number"
+        >
+    </EditText>
+ 
+<TextView
+        android:id="@+id/textView3"
+        android:textColor="#6a3ab2"
+        android:textSize="15sp"
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:text=" User 1 :"
+         /> 
+<EditText
+        android:id="@+id/user1"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        >
+    </EditText> 
+
+
+ 
+
+    <TextView
+        android:id="@+id/textView3"
+        android:textColor="#6a3ab2"
+        android:textSize="15sp"
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:text=" User 2 :"
+         />
+    <EditText
+        android:id="@+id/user2"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress" >
+      
+    </EditText>
+         <Button
+        style="@style/button"
+        android:id="@+id/set"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+               android:text="  SET " />
+
+</LinearLayout>
+    
