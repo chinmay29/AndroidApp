@@ -1,0 +1,173 @@
+$uname=$_GET['uname'];
+$pwd=$_GET['pwd'];
+$lock=$_GET['lock'];
+$imei=$_GET['imei'];
+$date=$_GET['date'];
+$time=$_GET['time'];
+$command=$_GET['command'];
+$special=$_GET['special'];
+//echo $special;
+//echo $lock;
+ if($command=='login') 
+  { 
+//echo "hey";
+$data = mysql_query("SELECT * FROM test WHERE uname='$uname'");
+ $info = mysql_fetch_array( $data );
+$fdate=$info['fdate'];
+$ftime=$info['ftime'];
+$tdate=$info['tdate'];
+$ttime=$info['ttime'];
+
+$h = strtotime("$date $time");
+$h1 = strtotime("$fdate $ftime");
+$h2 = strtotime("$tdate $ttime");
+    if ($h1 < $h && $h2 < $h)
+      {
+    // echo "yyy";
+    $qry="SELECT * FROM users WHERE uname='$uname' AND nolock='$lock' AND pwd='$pwd' AND imei='$imei' AND request='1' AND everify='1'";
+	$result=mysql_query($qry);
+          
+	//Check whether the query was successful or not
+	
+         
+               if(mysql_num_rows($result) > 0)
+                 {                       
+                    
+                     echo "correct"; 
+                    
+                    $sql11="INSERT INTO login VALUES('$uname', '$lock', '$date','$time')";
+                    $result3=mysql_query($sql11);
+                  }
+                
+                
+                else
+                 {
+                   echo " username/password incorrect ";
+                 }
+         }
+       else
+        {
+        echo "You are not allowed";
+         }
+   
+}
+elseif($command =='logout')
+{
+echo "Logout successfully!!";
+
+}
+elseif($command =='multi')
+{
+$data1 = mysql_query("SELECT * FROM multi WHERE no='$lock'");
+ $info1 = mysql_fetch_array( $data1 );
+$user1=$info1['user1'];
+$user2=$info1['user2'];
+if($uname==$user1 or $uname==$user2)
+ {
+    $qry1="SELECT * FROM users WHERE uname='$uname' AND pwd='$pwd' AND imei='$imei' AND request='1' AND everify='1'";
+	$result1=mysql_query($qry1);
+                  if(mysql_num_rows($result1) > 0)
+                 {                       
+                     echo "correct";
+                    $sql5="INSERT INTO login VALUES('$uname', '$lock', '$date','$time')";
+                    $result5=mysql_query($sql5);
+         
+                  }
+                  else { echo "username/password incorrect"; }
+  }
+else {echo "You are not an authorized user"; }
+             
+}
+
+elseif($command =='view')
+{
+$sql3="select uname from users";
+$result13=mysql_query($sql3);
+if (mysql_num_rows($result13) > 0) {
+
+		while($row = mysql_fetch_row($result13)) {
+			$people = $people.$row[0]."  ";
+		}
+		echo $people;
+	}
+}
+elseif($command =='open')
+{
+      if($special=='multi')
+      { $data2 = mysql_query("SELECT * FROM multi WHERE no='$lock'");
+ $info2 = mysql_fetch_array( $data2 );
+$user1=$info2['user1'];
+$user2=$info2['user2'];
+$v1=$info2['v1'];
+$v2=$info2['v2'];
+//echo "yy";
+         if($v1==0)
+          {
+            if($uname==$user1)
+             {  
+             $sql1="UPDATE multi set v1='1' WHERE no='$lock'";
+                            $result1=mysql_query($sql1);
+                        echo "Now waiting for second phone to send open command";
+               }
+             else { echo "This is not proper sequence";}
+          }
+         else
+          {
+           if($uname==$user2)
+                           {
+                             $sql1="UPDATE multi set v2='1' WHERE no='$lock'";
+                             $result1=mysql_query($sql1);
+                              $textfile = "LEDstate.html"; // Declares the name and location of the .txt file
+                             $onoroff="1";
+                             $fileLocation = "$textfile";
+                   $fh = fopen($fileLocation, 'w   ') or die("Something went wrong!"); // Opens up the .txt file for writing and replaces any previous content
+                   $stringToWrite = "1"; // Write either 1 or 0 depending on request from index.html
+                   fwrite($fh, $stringToWrite); // Writes it to the .txt file
+                  fclose($fh); 
+                           }
+             else { echo "This is not proper sequence";}
+
+            }
+        }
+       else{
+         $textfile = "LEDstate.html"; // Declares the name and location of the .txt file
+                    $onoroff="1";
+                   $fileLocation = "$textfile";
+                   $fh = fopen($fileLocation, 'w   ') or die("Something went wrong!"); // Opens up the .txt file for writing and replaces any previous content
+                   $stringToWrite = "1"; // Write either 1 or 0 depending on request from index.html
+                   fwrite($fh, $stringToWrite); // Writes it to the .txt file
+                  fclose($fh); 
+              }
+}
+elseif($command =='close')
+{
+ if($special=='multi')
+{
+ $sql1="UPDATE multi set v1='0' WHERE no='$lock'";
+                             $result1=mysql_query($sql1);
+ $sql1="UPDATE multi set v2='0' WHERE no='$lock'";
+                             $result1=mysql_query($sql1);
+                             
+                           
+}
+$textfile = "LEDstate.html"; // Declares the name and location of the .txt file
+                   $fileLocation = "$textfile";
+                   $fh = fopen($fileLocation, 'w   ') or die("Something went wrong!"); // Opens up the .txt file for writing and replaces any previous content
+                   $stringToWrite = "0"; // Write either 1 or 0 depending on request from index.html
+                   fwrite($fh, $stringToWrite); // Writes it to the .txt file
+                  fclose($fh); 
+}
+
+elseif($command =='userapprove')
+{
+$sql4="select uname from users where request='0'";
+$result4=mysql_query($sql4);
+if (mysql_num_rows($result4) > 0) {
+
+		while($row = mysql_fetch_row($result4)) {
+			$people1 = $people1.$row[0]." ";
+		}
+		echo $people1;
+	}
+}
+}

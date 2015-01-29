@@ -1,0 +1,38 @@
+$uname=$_GET['uname'];
+$command=$_GET['command'];
+$ans=$_GET['ans'];
+
+function rand_string( $length ) {
+	$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";	
+
+
+	$size = strlen( $chars );
+	for( $i = 0; $i < $length; $i++ ) {
+		$str .= $chars[ rand( 0, $size - 1 ) ];
+	}
+
+	return $str;
+}
+$rand=rand_string( 5 );
+$data = mysql_query("update users set pcode='$rand' WHERE uname='$uname'");
+$data = mysql_query("SELECT * FROM users WHERE uname='$uname'");
+ $info = mysql_fetch_array( $data );
+if($command='forget')
+{
+$ans1=$info['ans'];
+$e=$info['email_id'];
+if($ans1==$ans)
+{
+   $subject = "Password change from CVSS";
+   $message = "Your verifaction code is $rand";
+   $header = "From:cadeshpande2007@gmail.com \r\n";
+   $retval = mail ($e,$subject,$message,$header);
+   if( $retval == true )  
+   {
+      echo "verification code is sent to your email id.";
+  }
+   else
+   {
+      echo "Error..!!";
+    } 
+}

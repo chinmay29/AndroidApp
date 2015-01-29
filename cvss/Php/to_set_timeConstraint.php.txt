@@ -1,0 +1,13 @@
+$fdate=$_GET['fdate'];
+$ftime=$_GET['ftime'];
+$tdate=$_GET['tdate'];
+$ttime=$_GET['ttime'];
+$uname=$_GET['uname'];
+
+$query = "INSERT INTO test VALUES ('$fdate','$ftime','$tdate','$ttime','$uname')";
+
+$resultset = mysql_query($query);
+if($resultset)
+{
+echo "Time Constraint set";
+}

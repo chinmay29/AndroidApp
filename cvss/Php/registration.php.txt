@@ -1,0 +1,46 @@
+$uname=$_GET['uname'];
+$email_id=$_GET['email_id'];
+$mob_no=$_GET['mob_no'];
+$pwd=$_GET['pwd'];
+$imei=$_GET['imei'];
+$lock=$_GET['lock'];
+$ans=$_GET['ans'];
+function rand_string( $length ) {
+	$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";	
+
+
+
+
+	$size = strlen( $chars );
+	for( $i = 0; $i < $length; $i++ ) {
+		$str .= $chars[ rand( 0, $size - 1 ) ];
+	}
+
+
+
+
+	return $str;
+}
+$rand=rand_string( 5 );
+
+$query = "INSERT INTO users VALUES ('$uname','$email_id','$rand','$mob_no','$pwd','','$imei','$lock','0','0','$ans')";
+//$query = "INSERT INTO users VALUES ('sadadasd','asdasdasd')";
+$resultset = mysql_query($query);
+if($resultset)
+{
+echo "Registration Successful  ";
+   $subject = "Email-Id Verification from CVSS";
+   $message = "Your verifaction code is $rand";
+   $header = "From:cadeshpande2007@gmail.com \r\n";
+   $retval = mail ($email_id,$subject,$message,$header);
+   if( $retval == true )  
+   {
+      echo "     Please validate your email id. Validation code is sent to your email id.";
+  }
+   else
+   {
+      echo "Error..!!";
+    } 
+ 
+
+}

@@ -1,0 +1,30 @@
+$lock=$_GET['lock'];
+$command=$_GET['command'];
+$uname=$_GET['uname'];
+//echo "done";
+
+if($command=='approve') 
+{
+         
+	 $update=mysql_query("UPDATE users SET request='1' WHERE uname = '$uname'");
+          if($update)
+		{ echo "approved";
+		}
+	
+          else
+	{
+	echo "Error..try again!!";
+	} 
+}
+
+elseif($command=='remove') 
+{
+	 $update=mysql_query("UPDATE users SET request='0' WHERE uname = '$uname'");
+          if($update)
+		{ echo "reject";
+		}
+	
+        else
+	{
+	echo "incorrect current email_id";
+	} 
